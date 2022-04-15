@@ -158,6 +158,6 @@ module.exports = function generateVueComponent (object) {
       }
     }
   };
-  content = format(options);
+  // content = format(options);
   return content
 }
