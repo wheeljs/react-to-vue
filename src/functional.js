@@ -65,7 +65,7 @@ module.exports = function (path, fileContent, result, funcType = null) {
     // get code
     let code = getFunctionBody(path, false)
     //if it's a common function
-    result.functional.push(code)
+    result.functional.push(`const ${funcCom.componentName} = ${code}`)
     return
   } else if (extraCode) {
     //add the extra code into blockstatement
