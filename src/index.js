@@ -5,8 +5,8 @@ var getClass = require('./class')
 var saveComponent = require('./save')
 var generateVueComponent = require('./generate')
 var getFunctional = require('./functional')
-var babelTraverse = require('babel-traverse').default
-var babylon = require('babylon')
+var babelTraverse = require('@babel/traverse').default
+var babylon = require('@babel/parser')
 var chalk = require('chalk')
 var transformTS = require('./ts')
 var flowRemoveTypes = require('flow-remove-types');
@@ -25,7 +25,7 @@ module.exports = function transform (src, options) {
   // parse module
   let ast = babylon.parse(fileContent, {
     sourceType:'module',
-    plugins: ["typescript", "classProperties", "jsx", "trailingFunctionCommas", "asyncFunctions", "exponentiationOperator", "asyncGenerators", "objectRestSpread", "decorators"]
+    plugins: ["typescript", "classProperties", "jsx", "trailingFunctionCommas", "asyncFunctions", "exponentiationOperator", "asyncGenerators", "objectRestSpread", "decorators-legacy"]
   })
   if (options.ts) {
     transformTS(ast)

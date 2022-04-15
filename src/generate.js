@@ -1,5 +1,5 @@
 var format = require("prettier-eslint");
-var babelTraverse = require('babel-traverse').default
+var babelTraverse = require('@babel/traverse').default
 var {transformComponentName} = require('./utility')
 
 function mergeExportComponent (object) {

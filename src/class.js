@@ -1,7 +1,7 @@
-var generate = require('babel-generator').default
-var babelTraverse = require('babel-traverse').default
-var babylon = require('babylon')
-var babelTypes = require('babel-types')
+var generate = require('@babel/generator').default
+var babelTraverse = require('@babel/traverse').default
+var babylon = require('@babel/parser')
+var babelTypes = require('@babel/types')
 var getProps = require('./props')
 const {getFunctionBody, transformSourceString, transformComponentName} = require('./utility')
 // autumatically increate index 
